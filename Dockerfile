@@ -1,9 +1,10 @@
 FROM golang:1.16.0-alpine3.13 AS builder
 RUN apk add --no-cache git make
-RUN go get github.com/chonla/cotton
+RUN git clone https://github.com/chonla/cotton.git /go/src/github.com/chonla/cotton
 
 WORKDIR /go/src/github.com/chonla/cotton
 
+RUN go mod download
 RUN make
 
 FROM alpine:3.13.1

@@ -1,4 +1,4 @@
-FROM golang:1.15-alpine3.12 AS builder
+FROM golang:1.16.0-alpine3.13 AS builder
 RUN apk add --no-cache git make
 RUN go get github.com/chonla/cotton
 
